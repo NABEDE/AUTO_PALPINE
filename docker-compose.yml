@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  alpine-test:
+    build: .
+    container_name: alpine_script_runner
+    # Run the script interactively when the container starts
+    command: ['/app/autopalpine-v1.sh']
+    # Keep stdin open and allocate a tty for interactive prompts
+    stdin_open: true
+    tty: true
