@@ -28,7 +28,10 @@ Ce script bash automatise diverses tâches de maintenance notamment la mise à j
 
 ## Utilisation (Exécution directe)
 
-1.  Téléchargez le script `autopalpine-v1.sh`.
+1.  Cloner l'application dépuis GitHub.
+    ```bash
+    git clone git clone https://github.com/NABEDE/AUTO_PALPINE-1.0.git
+    ```
 2.  Rendez le script exécutable :
     ```bash
     chmod +x autopalpine-v1.sh
@@ -36,6 +39,10 @@ Ce script bash automatise diverses tâches de maintenance notamment la mise à j
 3.  Exécutez le script :
     ```bash
     sudo ./autopalpine-v1.sh
+    #Ou
+    sudo bash autopalpine-v1.sh
+    #Ou avec le root
+    ./autopalpine-v1.sh
     ```
 4.  Suivez les instructions interactives.
 
