@@ -1,5 +1,5 @@
 #!/bin/bash
-
+source ./VERSION.txt
 # Exit on any error not explicitly handled
 set -e
 
@@ -7,6 +7,7 @@ set -e
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 COMMON_SCRIPT_PATH="${SCRIPT_DIR}/common/script.sh"
 UPDATER_DIR="${SCRIPT_DIR}/updater"
+
 
 # --- Source Common Script ---
 # shellcheck source=common/script.sh
@@ -22,6 +23,7 @@ display_welcome_message() {
     echo -e "\\e[35m🤖 𝐇𝐞𝐥𝐥𝐨 ! 𝐁𝐢𝐞𝐧𝐯𝐞𝐧𝐮𝐞 𝐬𝐮𝐫 𝐯𝐨𝐭𝐫𝐞 𝐚𝐬𝐬𝐢𝐬𝐭𝐚𝐧𝐭 𝐚𝐮𝐭𝐨𝐩𝐚𝐥𝐩𝐢𝐧𝐞 𝐕𝐞𝐫𝐬𝐢𝐨𝐧 𝟏.𝟎 (Refactored)\\e[0m"
     echo -e "\\e[35m𝐏𝐨𝐮𝐫 𝐥\\'𝐚𝐮𝐭𝐨𝐦𝐚𝐭𝐢𝐬𝐚𝐭𝐢𝐨𝐧 𝐝𝐞𝐬 𝐦𝐢𝐬𝐞𝐬 𝐚̀ 𝐣𝐨𝐮𝐫 𝐝𝐞 𝐯𝐨𝐭𝐫𝐞 𝐬𝐲𝐬𝐭𝐞̀𝐦𝐞 𝐋𝐢𝐧𝐮𝐱\\e[0m"
     echo -e "\\e[35m( 𝐀𝐥𝐩𝐢𝐧𝐞, 𝐔𝐛𝐮𝐧𝐭𝐮, 𝐃𝐞𝐛𝐢𝐚𝐧 𝐞𝐭 𝐂𝐞𝐧𝐭𝐎𝐒 )\\e[0m"
+    echo -e "\\e[35m ${VERSION} \\e[0m"
     echo -e "\\e[35m=======================================================================\\e[0m"
 }
 
