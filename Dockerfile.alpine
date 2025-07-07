@@ -1,0 +1,19 @@
+FROM alpine:latest
+
+# Install bash and dos2unix
+RUN apk add --no-cache bash dos2unix
+
+# Set working directory
+WORKDIR /app
+
+# Copy all scripts into the container
+COPY autopalpine-v1.sh /app/autopalpine-v1.sh
+COPY common/script.sh /app/common/script.sh
+COPY updater/alpine.sh /app/updater/alpine.sh
+
+# Convert all scripts to Unix format and make them executable
+RUN dos2unix /app/autopalpine-v1.sh /app/common/script.sh /app/updater/alpine.sh && \
+    chmod +x /app/autopalpine-v1.sh /app/common/script.sh /app/updater/alpine.sh
+
+# Commande par défaut (on attend des instructions manuelles)
+CMD ["tail", "-f", "/dev/null"]

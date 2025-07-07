@@ -61,12 +61,16 @@ Cela est particulièrement utilise si vous développez sur un autre OS.
 2.  Ouvrez un terminal dans ce répertoire.
 3.  Construisez l'image Docker :
     ```bash
-    docker-compose up --build
+    docker-compose up --build -d
     ```
 4.  Exécutez le script de manière interactive dans un conteneur :
     ```bash
-    docker-compose exec autopalpine bash
-        # puis dans le conteneur :
+    docker-compose exec alpine-test /bin/sh
+
+    # S'il n'a pas de permission pour exécuter le fichier autopalpine-v1.sh
+    chmod +x autopalpine-v1.sh
+    
+    # puis dans le conteneur :
     ./autopalpine-v1.sh
 
     ```

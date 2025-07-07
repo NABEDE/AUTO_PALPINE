@@ -1,11 +1,22 @@
-version: '3.8'
+version: '3'
 
 services:
   alpine-test:
-    build: .
-    container_name: alpine_script_runner
-    # Run the script interactively when the container starts
-    command: ['/app/autopalpine-v1.sh']
-    # Keep stdin open and allocate a tty for interactive prompts
+    build:
+      context: .
+      dockerfile: Dockerfile.alpine
+    container_name: alpine-test
     stdin_open: true
     tty: true
+    volumes:
+      - ./alpine:/app
+
+  debian-test:
+    build:
+      context: .
+      dockerfile: Dockerfile.debian
+    container_name: debian-test
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./debian:/app
